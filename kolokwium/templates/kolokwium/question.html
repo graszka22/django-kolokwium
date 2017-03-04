@@ -1,0 +1,40 @@
+{% extends 'kolokwium/base.html' %}
+{% block content %}
+
+    <div class="back"><a href="{% url 'kolokwium:kolokwium' question.kolokwium.id %}">&larr; Do listy pytań</a></div>
+
+    <h1>{{ question.question_text }}</h1><hr>
+    
+    <div id="inner-content">
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    
+    {% if answer %}
+        <table>
+        {% for choice in question.choice_set.all %}
+        {% if choice == good %}
+            <tr><td class="choice-good">{{ choice.choice_text }}</td></tr>
+        {% elif choice == answer.choice and choice != good %}
+            <tr><td class="choice-bad">{{ choice.choice_text }}</td></tr>
+        {% else %}
+            <tr><td>{{ choice.choice_text }}</td></tr>
+        {% endif %}
+        {% endfor %}
+        </table>
+    {% else %}
+
+        <form action="{% url 'kolokwium:answer' question.kolokwium.id question.id %}" method="post">
+        {% csrf_token %}
+        <table>
+        {% for choice in question.choice_set.all %}
+            <tr><td><input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+            <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label></td></tr>
+        {% endfor %}
+        </table><br>
+        <input class="answer-btn" type="submit" value="Answer" />
+        </form>
+        
+    </div>
+    
+    {% endif %}
+{% endblock %}

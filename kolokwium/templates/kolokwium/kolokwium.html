@@ -1,0 +1,35 @@
+{% extends 'kolokwium/base.html' %}
+{% block content %}
+
+    
+    <div class="back"><a href="{% url 'kolokwium:index' %}">&larr; Do listy kolokwiów</a></div>
+
+    <h1>{{ kolokwium.name }}</h1><hr>
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+    <div id="inner-content">
+    <table>
+    {% if questions_and_answers %}
+        <th>Question</th><th>Answer</th>
+        {% for q in questions_and_answers %}
+            <tr>
+                <td><a href="{% url 'kolokwium:question' kolokwium.id q.0.id %}">{{ q.0.question_text }}</a></td>
+                {%if q.1 == True%}
+                    <td class="answer"><div class="answer-ok">OK</div></td>
+                {% elif q.1 == False %}
+                    <td class="answer"><div class="answer-ans">ANS</div></td>
+                {% else %}
+                    <td class="answer"><div class="answer-none">NONE</div></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    {% else %}
+        {% for question in kolokwium.question_set.all %}
+            <tr><td><a href="{% url 'kolokwium:question' kolokwium.id question.id %}">{{ question.question_text }}</a></td></tr>
+        {% endfor %}
+    {% endif %}
+    </table>
+    </div>
+    
+{% endblock %}

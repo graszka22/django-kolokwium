@@ -1,0 +1,20 @@
+{% extends 'kolokwium/base.html' %}
+{% block content %}
+
+    <h1>Kolokwia</h1><hr>
+    
+    <div id="inner-content">
+
+    {% if kolokwium_list %}
+        <table>
+        {% for kolokwium in kolokwium_list %}
+            <tr><td><a href="{% url 'kolokwium:kolokwium' kolokwium.id %}">{{ kolokwium.name }}</a><tr><td>
+        {% endfor %}
+        </table>
+    {% else %}
+        <p>No kolokwiums are available.</p>
+    {% endif %}
+    
+     </div>
+    
+{% endblock %}

@@ -1,0 +1,139 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+body {
+    background-color: #CEECF2;
+    font-family: "sans-serif";
+}
+#content {
+    margin: 30px;
+}
+
+#login_header {
+    background-color: #459DBF;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    padding: 20px;
+}
+
+th {
+    background-color: #1C63A6;
+    color: white;
+}
+#inner-content {padding: 60px;}
+table {
+    background-color: #3285A6;
+    width: 100%;
+}
+td, th {padding: 10px;}
+tr:nth-child(even) {background-color: #459DBF}
+tr:hover {background-color: #77BDD9}
+td a {
+    text-decoration:none;
+    color: #000;
+    display:block;
+    height:100%;
+    width:100%;
+}
+}
+.back {padding-bottom: 20px;}
+.back a { text-decoration: none;}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #1C63A6;
+    background-image: linear-gradient(to right, #ccc, #1C63A6, #ccc);
+}
+
+.answer-ok {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background: #73AD21;
+    padding: 10px; 
+    width: 50px;
+    text-align: center;
+}
+
+.answer-ans {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background: #D32C2C;
+    padding: 10px; 
+    width: 50px;
+    text-align: center;
+}
+
+.answer-none {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background: #828282;
+    padding: 10px; 
+    width: 50px;
+    text-align: center;
+}
+
+.answer-btn {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background: #3285A6;
+    padding: 10px;
+    text-align: center;
+}
+
+.choice-good {
+    background-color: #73AD21;
+}
+
+.choice-bad {
+    background-color: #D32C2C;
+}
